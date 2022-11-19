@@ -16,9 +16,8 @@ from bot import (
     SESSION_NAME,
     DATABASE_URL
 )
-from bot.plugins.new_join_fn import (	
-    help_message_f	
-)
+
+
 
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
@@ -127,12 +126,6 @@ if __name__ == "__main__" :
     )
     app.add_handler(exec_message_handler)
     
-    # HELP command
-    help_text_handler = MessageHandler(
-        help_message_f,
-        filters=filters.command(["help", f"help@{BOT_USERNAME}"])
-    )
-    app.add_handler(help_text_handler)
     
     # Telegram command to upload LOG files
     upload_log_f_handler = MessageHandler(
