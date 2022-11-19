@@ -2,9 +2,7 @@
 
 import datetime
 import motor.motor_asyncio
-from 
-
-from 
+from bot import DATABASE_URL
 
 
 SESSION_NAME = 'videoconvertor'
@@ -13,7 +11,7 @@ class Database:
   
 #Connection--------------------------------------------------------------------
 
-    def __init__(self, MONGODB_URI, SESSION_NAME):
+    def __init__(self, DATABASE_URL, SESSION_NAME):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URI)
         self.db = self._client[SESSION_NAME]
         self.col = self.db.users
