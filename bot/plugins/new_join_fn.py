@@ -3,12 +3,12 @@
 # (c) Shrimadhav U K | @AbirHasan2005
 
 
-from bot.database import Database
+from bot.database import Database, SESSION_NAME
 from bot.localisation import Localisation
 from bot import (
     UPDATES_CHANNEL,
-    DATABASE_URL,
-    SESSION_NAME
+    DATABASE_URL
+    
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
