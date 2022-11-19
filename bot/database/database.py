@@ -12,7 +12,7 @@ class Database:
 #Connection--------------------------------------------------------------------
 
     def __init__(self, DATABASE_URL, SESSION_NAME):
-        self._client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URI)
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URL)
         self.db = self._client[SESSION_NAME]
         self.col = self.db.users
     
